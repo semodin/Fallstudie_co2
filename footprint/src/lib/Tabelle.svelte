@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
   import { tableData } from "./tableData.js";
-  //export const someProp; // Add any props if needed
+
 
   let sortedData = tableData;
   let searchQuery = ""; // Suchfeld für Filterung

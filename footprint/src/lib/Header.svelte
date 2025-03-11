@@ -1,12 +1,14 @@
 <script>
+  import { goto } from '$app/navigation';
+
   export let header = "CO2-footprint";
   export const img = "/logo.webp"; 
  
   // Links für die Navigation
   export let navLinks = [
-  { name: "Home", path: "/App.svelte" },
-  { name: "Über uns", path: "/About.svelte" },
-  { name: "Zusammenarbeit", path: "/collaboration" }
+    { name: "Home", path: "/" },  // "index.html" entfernt, SvelteKit braucht das nicht
+    { name: "Über uns", path: "/about" },
+    { name: "Zusammenarbeit", path: "/collaboration" }
   ];
 </script>
 
@@ -18,7 +20,7 @@
   <nav>
     <ul class="nav-list">
       {#each navLinks as link}
-        <li><a href="{link.path}">{link.name}</a></li>
+        <li><a href={link.path} use:prefetch>{link.name}</a></li>
       {/each}
     </ul>
   </nav>
@@ -49,7 +51,8 @@ img {
   object-position: center top;
   border-radius: 100%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
+}
+
 /* Navigation */
 .nav-list {
   list-style: none;
