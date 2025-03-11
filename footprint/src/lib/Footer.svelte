@@ -1,8 +1,13 @@
 
 <script>
-    export let footer = "© 2025 CO<sup>2</sup> Footprint";
+    export let footer = "© 2025 CO2 Footprint";
   </script>
-  
+   
+  <footer>
+        <p>{footer}</p>
+        <a href='/Impressum'>Impressum</a>
+  </footer>
+
   <style>
     footer {
     bottom: 0;
@@ -18,11 +23,12 @@
     padding: 1rem;
     text-align: center;
     height: 50px;
+    
+       }
+
+    a {
+    color: white;
+    position: left;
     }
 
   </style>
-  
-  <footer>
-        <h1>{footer}</h1>
-        <a href='/Impressum'>Impressum</a>
-  </footer>
