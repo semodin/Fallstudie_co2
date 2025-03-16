@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  
 }
 
 h1 {
@@ -40,7 +41,7 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -49,16 +50,18 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.6em 0.5em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: bold;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  /*transition: border-color 0.25s;*/
+  color: black;
+  /*transition: background-color 0.5s ease;*/
 }
 button:hover {
-  border-color: #646cff;
+  border-color: white;
 }
 button:focus,
 button:focus-visible {
@@ -77,3 +80,54 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+@media screen and (min-width: 1024px) {
+  body {
+    background-color: #f9f9f9;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  .card {
+    padding: 1em;
+  }
+  button {
+    padding: 0.4em 0.8em;
+  }
+  
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    background-color: #f9f9f9;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  .card {
+    padding: 1em;
+  }
+  button {
+    padding: 0.4em 0.8em;
+  }
+  
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    background-color: #f9f9f9;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  .card {
+    padding: 1em;
+  }
+  button {
+    padding: 0.4em 0.8em;
+  }
+  
+}
+
+

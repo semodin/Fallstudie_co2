@@ -1,6 +1,6 @@
 <script>
-  //import { onMount } from "svelte";
-  //import { writable } from "svelte/store";
+  import { onMount } from "svelte";
+  import { writable } from "svelte/store";
   import { tableData } from "./tableData.js";
 
 
@@ -63,9 +63,6 @@
 
 </script>
 
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos pariatur commodi, porro est atque esse qui amet quam consequuntur molestiae cupiditate nobis nemo temporibus facere possimus nisi magnam voluptatum, itaque magni incidunt quasi? Cupiditate, at non facilis ea assumenda quod! Iusto neque vel repudiandae ratione, ab officiis cupiditate praesentium obcaecati!</p>
-
 <!-- Suchfeld für die Filterung -->
 <div class="filter-container">
   <input 
@@ -99,10 +96,10 @@
 
       {#each sortedData as footprint}
     <tr>
-      <td class="id">{footprint.id}</td>
-      <td class="country">{footprint.country}</td>
-      <td class="company">{footprint.company}</td>
-      <td class="footprint">{footprint.footprint}</td>
+      <td>{footprint.id}</td>
+      <td>{footprint.country}</td>
+      <td>{footprint.company}</td>
+      <td>{footprint.footprint}</td>
     </tr>
       {/each}
 
@@ -111,29 +108,18 @@
 </div>
 
 <style>
-
-/*div {
-      margin: 10px;
-      justify-content: center;
-      align-items: center;
-  }
-*/
- 
-
 .table-container {
-      height: 400px;
-      max-width: 700px;
-      overflow-y: auto;
-      border: 2px solid #ddd;
-      justify-content: center;
-      
+    max-height: 400px;
+    min-height: 400px;
+    overflow-y: auto;
+    min-width: 700px;
+    max-width: 700px;
   }
 
   table {
       border-spacing: 0;
       width: 100%;
       border: 1px solid #ddd;
-      border-collapse: collapse;
   }
 
   th, td {
@@ -141,22 +127,17 @@
       padding: 8px;
       text-align: left;
       column-width: 100px;
-      
   }
 
   th {
       background-color: #f2f2f2;
       text-transform: uppercase;
       cursor: pointer;
-      position: sticky;
-      top: 0;
-      z-index: 2;
   }
 
   .higlighted {
-      font-weight: bold;
-      background-color: rgb(202, 230, 243);
-      
+      color: hsl(118, 100%, 45%)
+  
   }
 
   th:hover {
@@ -168,46 +149,8 @@
   }
 
   div.filter-container {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
   }
-
-  td.id {
-      min-width: 70px;
-  }
-
-  td.country {
-      width: 150px;
-  }
-  
-td.company {
-      width: 150px;
-  }
-
-  td.footprint {
-      width: 150px;
-  }
-
-  .search-box {
-      width: 300px;
-      padding: 10px;
-      margin: 10px;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-
-  }
-
-  .order-icon {
-      background: none;
-      border: none;
-      color: black;
-      font-size: 20px;
-      cursor: pointer;
-  }
-
-  .order-icon:hover {
-      color: black;
-  }
-
 </style>

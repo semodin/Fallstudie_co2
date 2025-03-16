@@ -1,30 +1,32 @@
 <script>
-  import { goto } from '$app/navigation';
 
-  export let header = "CO2-footprint";
-  export const img = "/logo.webp"; 
+  import { route } from "../store.js";
+
+function navigateTo(page) {
+  route.set(page); // Ändert die Route
+}
+
+export let header = "CO2-footprint"; 
+export const img = "/logo.webp"; 
  
-  // Links für die Navigation
-  export let navLinks = [
-    { name: "Home", path: "/" },  // "index.html" entfernt, SvelteKit braucht das nicht
-    { name: "Über uns", path: "/about" },
-    { name: "Zusammenarbeit", path: "/collaboration" }
-  ];
 </script>
 
 <header>
-  <img src="{img}" alt="Logo">
+  <div class="header-container">
+  <img src="/logo1.webp" alt="Logo">
   <h1>{header}</h1>
+  </div>
 
-  <!-- Navigation -->
   <nav>
     <ul class="nav-list">
-      {#each navLinks as link}
-        <li><a href={link.path} use:prefetch>{link.name}</a></li>
-      {/each}
+      <button on:click={() => navigateTo('home')}>Home</button>
+      <button on:click={() => navigateTo('about')}>Über uns</button>
+      <button on:click={() => navigateTo('contact')}>Kontakt</button>
+
     </ul>
   </nav>
 </header>
+
 
 <style>
 header {
@@ -37,15 +39,23 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: #d4eebe;
   display: flex;
-  flex-direction: column; /* Stellt das Logo über h1 */
+  flex-direction: column; /* Stellt sicher, dass Inhalte untereinander bleiben */
   justify-content: center;
   align-items: center;
   color: black;
   text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center; /* Bild und Text vertikal ausrichten */
+  gap: 15px; /* Abstand zwischen Bild und Titel */
 }
 
 img {
-  max-width: 180px;
+  max-width: 100px;
   height: auto;
   object-fit: cover;
   object-position: center top;
@@ -55,27 +65,17 @@ img {
 
 /* Navigation */
 .nav-list {
-  list-style: none;
   padding: 0;
-  margin: 10px 0 0;
-  display: flex;
+  margin: 10px 0 0 0;   display: flex;
   gap: 15px;
 }
 
-.nav-list li {
-  display: inline;
+.nav-list button {
+  background-color: #d4eebe;
 }
 
-.nav-list a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-}
-
-.nav-list a:hover {
+.nav-list button:hover {
   background: rgba(0, 0, 0, 0.1);
 }
+
 </style>

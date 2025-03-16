@@ -1,26 +1,40 @@
 <script>
-import Header from "./lib/Header.svelte";
-import Footer from "./lib/Footer.svelte";
-import Tabelle from "./lib/Tabelle.svelte";
-</script>
+  import { route } from "./store.js";
+  import Header from "./lib/Header.svelte";
+  import Footer from "./lib/Footer.svelte";
+  import Tabelle from "./lib/Tabelle.svelte";
+  import About from "./About.svelte";
+  import Impressum from "./Impressum.svelte";
+  import Contact from "./contact.svelte";
 
+  let currentRoute;
+  route.subscribe(value => currentRoute = value);
+</script>
+<Header/>
  
 <main>
-  <header>
-    <Header/>
-  </header>
+  <div class="container">
  
 
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, nostrum.</p>
+    {#if currentRoute === "home"}
+    <Tabelle />
+    {:else if currentRoute === "about"}
+    <About />
+    {:else if currentRoute === "contact"}
+    <Contact />
+    {:else if currentRoute === "impressum"}
+    <Impressum />
+    {/if} 
 
-  <Tabelle/>
 
-  <footer>
-    <Footer/>
-  </footer>
 </main>
+<Footer/>
 
 
 <style>
-
+  .container {
+    display: flex;
+    flex-direction: column;
+    height:fit-content; /* Volle Bildschirmhöhe */
+  }
 </style>
