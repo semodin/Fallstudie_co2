@@ -56,9 +56,7 @@ button {
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  /*transition: border-color 0.25s;*/
   color: black;
-  /*transition: background-color 0.5s ease;*/
 }
 button:hover {
   border-color: white;
@@ -95,8 +93,11 @@ button:focus-visible {
   button {
     padding: 0.4em 0.8em;
   }
-  
+  .menu-button {
+    display: none;
+  }
 }
+  
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   body {
@@ -111,8 +112,11 @@ button:focus-visible {
   button {
     padding: 0.4em 0.8em;
   }
-  
-}
+  .menu-button {
+    display: none;
+  }
+
+} 
 
 @media screen and (max-width: 767px) {
   body {
@@ -129,5 +133,4 @@ button:focus-visible {
   }
   
 }
-
 

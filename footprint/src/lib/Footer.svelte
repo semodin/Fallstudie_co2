@@ -5,17 +5,16 @@
 function navigateTo(page) {
   route.set(page); 
 }
-    export let footer = "© 2025 CO2 Footprint";
+   export let footer = ""; 
   </script>
    
   <footer>
              
         <nav>
           <ul class="nav-list">
-            <p>{footer}</p>;
+            <p>{footer}</p>
             <button on:click={() => navigateTo('impressum')}>Impressum</button>
             <button on:click={() => navigateTo('datenschutz')}>Datenschutz</button>
-            <button on:click={() => navigateTo('contact')}>Kontakt</button>
             
           </ul>
         </nav>
@@ -24,24 +23,23 @@ function navigateTo(page) {
 
   <style>
     footer {
+    position: fixed;
     bottom: 0%;
-    /*left: 0;*/
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     background-color: #ddd;
     color: black;
-    padding: 1rem;
     text-align: center;
     height: 50px;
-    padding: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    margin: 10px 0 0 0;
+    margin: 0 0 0 0;
     
        }
 

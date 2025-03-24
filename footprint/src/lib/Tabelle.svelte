@@ -1,8 +1,8 @@
 <script>
-  //import { onMount } from "svelte";
-  //import { writable } from "svelte/store";
+
   import { tableData } from "./tableData.js";
 
+  export let message = "Tabelle";
 
   let sortedData = tableData;
   let searchQuery = ""; // Suchfeld für Filterung
@@ -62,7 +62,9 @@
   };
 
 </script>
+<main>
 
+<h1>{message}</h1>
 
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos pariatur commodi, porro est atque esse qui amet quam consequuntur molestiae cupiditate nobis nemo temporibus facere possimus nisi magnam voluptatum, itaque magni incidunt quasi? Cupiditate, at non facilis ea assumenda quod! Iusto neque vel repudiandae ratione, ab officiis cupiditate praesentium obcaecati!</p>
 
@@ -109,24 +111,19 @@
   </tbody>
 </table>
 </div>
+</main>
 
 <style>
 
-/*div {
-      margin: 10px;
-      justify-content: center;
-      align-items: center;
-  }
-*/
- 
-
 .table-container {
       height: 400px;
+      max-height: fit-content;
+      min-height: 400px;
       max-width: 700px;
       overflow-y: auto;
       border: 2px solid #ddd;
       justify-content: center;
-      
+      margin: 10px auto;           
   }
 
   table {
@@ -181,7 +178,7 @@
       width: 150px;
   }
   
-td.company {
+  td.company {
       width: 150px;
   }
 

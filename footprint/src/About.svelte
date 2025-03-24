@@ -15,16 +15,15 @@
 </main>
 
 <style>
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
-
-.content {
-  max-width: 800px;
-}
-</style>
-
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .content {
+    max-width: 100%;
+  }
+  </style>
