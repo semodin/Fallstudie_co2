@@ -5,6 +5,8 @@
   export let message = "Tabelle";
 
   let sortedData = tableData;
+  const sanitizeInput = (input) => input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
   let searchQuery = ""; // Suchfeld für Filterung
   let filteredData = tableData; // Neue gefilterte Daten
  
@@ -73,7 +75,7 @@
   <input 
     type="text" 
     placeholder="Suchen..." 
-    bind:value={searchQuery} 
+    bind:value={searchQuery} on:input={() => searchQuery = sanitizeInput(searchQuery)} 
     on:input={filterData} 
     class="search-box"
   />
@@ -89,7 +91,8 @@
       
       {#if header === selectedHeader}
       <button type="button" class="order-icon" on:click={() => ascendingOrder = !ascendingOrder} aria-label="Toggle sort order">
-          {@html ascendingOrder ? "&#9661;" : "&#9651;"}
+        {ascendingOrder ? "▼" : "▲"} 
+
       </button>
       {/if}
     

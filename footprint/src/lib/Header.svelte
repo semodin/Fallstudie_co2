@@ -22,13 +22,13 @@ function navigateTo(page) {
 }
 
 export let header = "CO2-footprint"; 
-export const img = "/logo.webp"; 
+export const img = "/Logo2_small.png"; 
  
 </script>
 
 <header>
   <div class="header-container">
-    <img src="/logo1.webp" alt="Logo">
+    <img src="/Logo2_small.png" alt="Logo">
     <h1>{header}</h1>
   </div>
 
