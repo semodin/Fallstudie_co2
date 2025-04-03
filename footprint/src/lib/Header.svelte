@@ -7,7 +7,8 @@
   const rtlLanguages = ["ar", "he", "fa", "ur"];
 
   // Aktuelle Sprache des Users abrufen
-  let userLang = navigator.language || navigator.userLanguage;
+  let userLang = navigator.language || (navigator.languages ? navigator.languages[0] : "en");
+
 
   // Prüfen, ob die Sprache von rechts nach links ist
   let isRTL = rtlLanguages.some(lang => userLang.startsWith(lang));
@@ -115,22 +116,45 @@ nav.open {
   display: flex;
 }
 
-/* Menüpunkte nach links oder rechts schieben */
+/* Standard-Navigation: links für LTR, rechts für RTL */
 .nav-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
   gap: 10px;
-  align-items: flex-start; /* LTR linksbündig */
-}
+  flex-direction: row;
+  justify-content: flex-start; /* Standard linksbündig */
+  align-items: center;
+  white-space: nowrap; /* Verhindert Zeilenumbrüche */
+ }
 
 /* Bei RTL rechtsbündig ausrichten */
 nav.rtl .nav-list {
   align-items: flex-end;
+  justify-content: flex-end;
 }
 
+@media screen and (min-width: 768px) {
+  nav {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+.nav-list {
+    flex-direction: row;
+    justify-content: flex-start; /* Standard: Links */
+  }
+
+    nav.rtl {
+    justify-content: flex-end;
+  }
+
+  nav.rtl .nav-list {
+    justify-content: flex-end;
+  }
 
 .nav-list li {
   width: 100%;

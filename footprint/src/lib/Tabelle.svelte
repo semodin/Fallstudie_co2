@@ -2,7 +2,7 @@
 
   import { tableData } from "./tableData.js";
 
-  export let message = "Tabelle";
+  export let message = "Entdecken Sie die CO₂-Emissionen weltweit!";
 
   let sortedData = tableData;
   const sanitizeInput = (input) => input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -15,7 +15,7 @@
   let selectedHeader = "id";
   let ascendingOrder = true; 
 
-  //Number sorting
+  //Nummer-sortierung
   const sortByNumber = (tableHeaders) => {
     sortedData = sortedData.sort((obj1, obj2) => {
       return ascendingOrder ? obj1[tableHeaders] - obj2[tableHeaders] : obj2[tableHeaders] - obj1[tableHeaders];
@@ -23,7 +23,7 @@
       selectedHeader = tableHeaders;
   };
 
-  //String sorting
+  //String-sorting
   const sortByString = (tableHeaders) => {
     sortedData = sortedData.sort((obj1, obj2) => {
       if (obj1[tableHeaders] < obj2[tableHeaders]) {
@@ -64,11 +64,14 @@
   };
 
 </script>
+
 <main>
 
-<h1>{message}</h1>
+<div class="header-container">
+  <h1>{message}</h1>
 
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos pariatur commodi, porro est atque esse qui amet quam consequuntur molestiae cupiditate nobis nemo temporibus facere possimus nisi magnam voluptatum, itaque magni incidunt quasi? Cupiditate, at non facilis ea assumenda quod! Iusto neque vel repudiandae ratione, ab officiis cupiditate praesentium obcaecati!</p>
+   <p>Hier finden Sie eine interaktive Übersicht über die jährlichen CO₂-Emissionen verschiedener Länder und Unternehmen. Nutzen Sie die Sortier- und Filterfunktionen, um gezielt nach Informationen zu suchen und wertvolle Einblicke in die Verteilung der Emissionen zu gewinnen.</p>
+</div>
 
 <!-- Suchfeld für die Filterung -->
 <div class="filter-container">
@@ -117,6 +120,17 @@
 </main>
 
 <style>
+
+.header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 120px; /* Abstand vom Header */
+      padding: 20px;
+      
+  }
 
 .table-container {
       height: 400px;
