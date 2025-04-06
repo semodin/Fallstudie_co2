@@ -91,7 +91,6 @@ img {
   align-self: flex-start; /* Links oben */
 }
 
-
 /* Standardmäßig linksbündig für LTR */
 nav {
   display: none;
@@ -123,9 +122,9 @@ nav.open {
   margin: 0;
   display: flex;
   gap: 10px;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start; /* Standard linksbündig */
-  align-items: center;
+  align-items: flex-start;
   white-space: nowrap; /* Verhindert Zeilenumbrüche */
  }
 
@@ -135,26 +134,10 @@ nav.rtl .nav-list {
   justify-content: flex-end;
 }
 
-@media screen and (min-width: 768px) {
-  nav {
-    display: flex !important;
-    flex-direction: row;
-    justify-content: flex-start;
-  }
+
+nav.rtl {
+    justify-content: flex-end;
 }
-
-.nav-list {
-    flex-direction: row;
-    justify-content: flex-start; /* Standard: Links */
-  }
-
-    nav.rtl {
-    justify-content: flex-end;
-  }
-
-  nav.rtl .nav-list {
-    justify-content: flex-end;
-  }
 
 .nav-list li {
   width: 100%;
@@ -186,6 +169,16 @@ nav.rtl .nav-list {
 
   .nav-list {
     flex-direction: row;
+  }
+
+  nav.open {
+    flex-direction: row;
+  }
+
+  nav.open .nav-list {
+    flex-direction: row;
+    justify-content: center;
+    align-items: left;
   }
 
   nav.rtl .nav-list {
