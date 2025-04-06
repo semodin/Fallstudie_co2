@@ -23,7 +23,7 @@
       selectedHeader = tableHeaders;
   };
 
-  //String-sorting
+  //String-sortierung
   const sortByString = (tableHeaders) => {
     sortedData = sortedData.sort((obj1, obj2) => {
       if (obj1[tableHeaders] < obj2[tableHeaders]) {

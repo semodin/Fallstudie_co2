@@ -16,7 +16,6 @@
 <main>
   <div class="container">
  
-
     {#if currentRoute === "home"}
     <Tabelle />
     {:else if currentRoute === "about"}
@@ -29,15 +28,7 @@
     <Datenschutz />
     {/if} 
 
-
 </main>
 <Footer/>
 
 
-<style>
-  .container {
-    display: flex;
-    flex-direction: column;
-    height:fit-content; /* Volle Bildschirmhöhe */
-  }
-</style>

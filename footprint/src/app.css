@@ -13,11 +13,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+  .container {
+    display: flex;
+    flex-direction: column;
+    height:fit-content;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -28,7 +35,6 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  
 }
 
 h1 {
@@ -66,6 +72,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -79,7 +86,7 @@ button:focus-visible {
   }
 }
 
-
+/* Responsivität */
 @media screen and (min-width: 1024px) {
   body {
     background-color: #f9f9f9;
