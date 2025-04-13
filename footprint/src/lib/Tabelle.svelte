@@ -10,12 +10,12 @@
   let searchQuery = ""; // Suchfeld für Filterung
   let filteredData = tableData; // Neue gefilterte Daten
  
-  //Get the headers of the table
+ 
   const tableHeaders = Object.keys(tableData[0]);
   let selectedHeader = "id";
   let ascendingOrder = true; 
 
-  //Nummer-sortierung
+  //Numerische Sortierung
   const sortByNumber = (tableHeaders) => {
     sortedData = sortedData.sort((obj1, obj2) => {
       return ascendingOrder ? obj1[tableHeaders] - obj2[tableHeaders] : obj2[tableHeaders] - obj1[tableHeaders];
@@ -23,7 +23,7 @@
       selectedHeader = tableHeaders;
   };
 
-  //String-sortierung
+  //Alphabetische Sortierung
   const sortByString = (tableHeaders) => {
     sortedData = sortedData.sort((obj1, obj2) => {
       if (obj1[tableHeaders] < obj2[tableHeaders]) {
