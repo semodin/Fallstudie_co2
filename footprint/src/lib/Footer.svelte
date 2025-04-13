@@ -14,8 +14,6 @@ function navigateTo(page) {
           <ul class="nav-list">
             <p>{footer}</p>
             <button on:click={() => navigateTo('impressum')}>Impressum</button>
-            <button on:click={() => navigateTo('datenschutz')}>Datenschutz</button>
-            
           </ul>
         </nav>
 
@@ -40,8 +38,7 @@ function navigateTo(page) {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin: 0 0 0 0;
-    
-       }
+    }
 
     .nav-list {
       list-style: none;

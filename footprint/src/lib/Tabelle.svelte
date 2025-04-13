@@ -121,26 +121,33 @@
 
 <style>
 
+main  {
+padding-bottom: 120px; /* Platz für den Footer schaffen */
+  }
+
+
 .header-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin-top: 120px; /* Abstand vom Header */
+      margin-top: 120px; 
       padding: 20px;
       
   }
 
 .table-container {
+
+      justify-content: center;
+      align-items: center;
       height: 400px;
       max-height: fit-content;
       min-height: 400px;
       max-width: 700px;
       overflow-y: auto;
       border: 2px solid #ddd;
-      justify-content: center;
-      margin: 10px auto;           
+      margin: auto;         
   }
 
   table {

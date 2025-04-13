@@ -6,7 +6,7 @@
   import About from "./About.svelte";
   import Impressum from "./Impressum.svelte";
   import Contact from "./Contact.svelte";
-  import Datenschutz from "./Datenschutz.svelte";
+
 
   let currentRoute;
   route.subscribe(value => currentRoute = value);
@@ -24,8 +24,6 @@
     <Contact />
     {:else if currentRoute === "impressum"}
     <Impressum />
-    {:else if currentRoute === "datenschutz"}
-    <Datenschutz />
     {/if} 
 
 </main>
