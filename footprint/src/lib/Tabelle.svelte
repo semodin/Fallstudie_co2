@@ -95,7 +95,6 @@
       {#if header === selectedHeader}
       <button type="button" class="order-icon" on:click={() => ascendingOrder = !ascendingOrder} aria-label="Toggle sort order">
         {ascendingOrder ? "▼" : "▲"} 
-
       </button>
       {/if}
     
@@ -103,6 +102,7 @@
       {/each}
           </tr>
   </thead>
+  
   <tbody>
 
       {#each sortedData as footprint}
@@ -122,7 +122,7 @@
 <style>
 
 main  {
-padding-bottom: 120px; /* Platz für den Footer schaffen */
+padding-bottom: 120px; 
   }
 
 
